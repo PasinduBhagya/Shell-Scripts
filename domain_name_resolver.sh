@@ -11,4 +11,5 @@ while IFS= read -r domain_name; do
             output="Results"
         fi
     fi
+    echo "$domain_name"
 done < "$file_path"
