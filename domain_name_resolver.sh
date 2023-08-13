@@ -10,8 +10,8 @@ while IFS= read -r domain_name; do
             output="No Results"
         else
             output=$(dig "$domain_name" @1.1.1.1 | awk '/;; ANSWER SECTION:/ { flag=1; next } flag { if (NF == 0) exit; print $4, $5 }')
-            echo "$output"
+            # echo "$output"
         fi
-        # printf "%-40s %s\n" "$domain_name" "$output"
+        printf "%-25s %-30s %s\n" "$domain_name" "$output"
     fi
 done < "$file_path"
