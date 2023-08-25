@@ -19,7 +19,6 @@ while IFS= read -r domain_name; do
 
         printf "%-25s\n" "$output"
         echo "====================================================="
-
         
     fi
 done < "$file_path"
